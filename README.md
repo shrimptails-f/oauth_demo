@@ -40,6 +40,7 @@ docker network connect oauth-network oauth_client_practice_devcontainer-go-1
 | ---- | ---- |
 | ユーザー名 | 1 |
 | パスワード | 2 |
+
 ![認可画面](./docs/authorize.png)
 ## 4. アクセストークンに交換を押下
 ![コールバック画面](./docs/callback.png)
