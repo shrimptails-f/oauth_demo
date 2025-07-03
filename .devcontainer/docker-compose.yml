@@ -1,0 +1,26 @@
+version: "3"
+services:
+  go:
+    build:
+      context: ../
+      dockerfile: .devcontainer/infra/go/Dockerfile
+    env_file:
+      - .env
+    tty: true
+    ports:
+      - ${GO_PORT}:${GO_PORT}
+      - ${GO_DEBUG_PORT}:${GO_DEBUG_PORT}
+    environment:
+      - AUTHORIZE_SERVER_DOMAIN=${AUTHORIZE_SERVER_DOMAIN}
+      - AUTHORIZE_SERVER_DOCKER_DOMAIN=${AUTHORIZE_SERVER_DOCKER_DOMAIN}
+    volumes:
+      - ../:/data
+      - ~/.gitconfig:/root/.gitconfig
+    security_opt: # delve用に必要
+      - apparmor:unconfined
+    cap_add: # delve用に必要
+      - SYS_PTRACE
+
+networks:
+  oauth-network:
+    external: true
