@@ -32,15 +32,19 @@ docker network connect oauth-network oauth_practice_devcontainer-go-1
 docker network connect oauth-network oauth_client_practice_devcontainer-go-1
 ```
 # 動作確認手順
+## サーバー起動
+VsCodeのターミナルで以下のコマンドを実行
+```
+air
+```
 ## 1. http://localhost:8002/loginにアクセス
 ## 2. ログイン画面のOAuthでログインを押下
 ![ログイン要求画面](./docs/login.png)
 ## 3. ユーザー名とパスワードを入力
-| 項目 | 値 |
-| ---- | ---- |
-| ユーザー名 | 1 |
-| パスワード | 2 |
-
+|項目|値|
+|----|----|
+|ユーザー名|1|
+|パスワード|2|
 ![認可画面](./docs/authorize.png)
 ## 4. アクセストークンに交換を押下
 ![コールバック画面](./docs/callback.png)
